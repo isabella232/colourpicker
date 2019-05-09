@@ -3,3 +3,6 @@ files
 .Rhistory
 .RData
 .Ruserdata
+*.swo
+*.swp
+node_modules
