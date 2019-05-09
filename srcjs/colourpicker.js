@@ -1,3 +1,5 @@
+import { renderReactPicker, reactPalettes } from './react-pickers.js';
+
 /**
   * jQuery Colour picker: A tiny colour picker with useful extra features
   *
@@ -230,6 +232,9 @@
           coloursHtml +
           '</div>'
           );
+      } else if (reactPalettes.has(settings.palette)) {
+        const panel = $('<div class="colourpicker-panel"/>').insertAfter(input);
+        renderReactPicker(panel[0], settings.palette);
       } else {
         console.log("colourpicker: invalid palette type (" + settings.palette + ")");
       }

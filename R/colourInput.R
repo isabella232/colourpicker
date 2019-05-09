@@ -88,7 +88,23 @@
 #' @export
 colourInput <- function(inputId, label, value = "white",
                         showColour = c("both", "text", "background"),
-                        palette = c("square", "limited"),
+                        palette = c(
+                          "square",
+                          "limited",
+                          # react-color based palettes
+                          "sketch",
+                          "alpha",
+                          "block",
+                          "chrome",
+                          "circle",
+                          "compact",
+                          "github",
+                          "hue",
+                          "photoshop",
+                          "slider",
+                          "swatches",
+                          "twitter"
+                        ),
                         allowedCols = NULL, allowTransparent = FALSE,
                         returnName = FALSE, closeOnClick = FALSE) {
   # sanitize the arguments
@@ -103,6 +119,8 @@ colourInput <- function(inputId, label, value = "white",
   shiny::addResourcePath("colourpicker-lib",
                          system.file("www", "shared", "colourpicker", package = "colourpicker"))
   deps <- list(
+    reactR::html_dependency_react(),
+    reactR::html_dependency_react(),
     htmltools::htmlDependency(
       "colourpicker-binding", "0.1.0", c(href = "colourpicker-binding"),
       script = "input_binding_colour.js"),

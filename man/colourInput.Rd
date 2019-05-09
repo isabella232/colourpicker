@@ -5,9 +5,10 @@
 \title{Create a colour input control}
 \usage{
 colourInput(inputId, label, value = "white", showColour = c("both",
-  "text", "background"), palette = c("square", "limited"),
-  allowedCols = NULL, allowTransparent = FALSE, returnName = FALSE,
-  closeOnClick = FALSE)
+  "text", "background"), palette = c("square", "limited", "sketch",
+  "alpha", "block", "chrome", "circle", "compact", "github", "hue",
+  "photoshop", "slider", "swatches", "twitter"), allowedCols = NULL,
+  allowTransparent = FALSE, returnName = FALSE, closeOnClick = FALSE)
 }
 \arguments{
 \item{inputId}{The \code{input} slot that will be used to access the value.}
